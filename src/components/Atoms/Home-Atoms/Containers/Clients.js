@@ -14,9 +14,10 @@ export default function Clients() {
   ];
 
   return (
-    <div className=" w-full h-[300px] flex  flex-col justify-center items-center p-2 ">
+    <div className=" w-full h-[fixed] flex  flex-col justify-center items-center p-2 ">
       {/* tab nine write a code to render the array of images in the marquee */}
       <Marquee scrollSpeed={20} pauseOnHover={true} direction="left" className="flex gap-x-8">
+      <div className="flex flex-row justify-between gap-x-[7rem] items-center h-[fixed]">
         {clients_images.map((image, index) => (
           <Image
             key={index}
@@ -24,9 +25,10 @@ export default function Clients() {
             width={500}
             height={500}
             alt="client"
-            className="     h-[100px] w-[100px]             md:w-[200px] md:h-[150px] object-cover object-center   cursor-pointer hover:scale-105 transform ease-in-out duration-500"
+            className="     h-[100px] w-[100px]             md:w-[100px] md:h-[100px] object-cover object-center   cursor-pointer hover:scale-105 transform ease-in-out duration-500"
           />
         ))}
+        </div>
       </Marquee>
     </div>
   );

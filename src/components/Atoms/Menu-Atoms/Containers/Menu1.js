@@ -74,7 +74,7 @@ export default function Menu1() {
     <div className="w-full h-[fixed] flex flex-col gap-y-5 justify-center items-center  p-2 ">
       <SubHeros items={hero_items} />
 
-      <MenuCards title=" Menus" cards={menu_contents} />
+      <MenuCards title=" Menu" cards={menu_contents} />
     </div>
   );
 }

@@ -21,16 +21,16 @@ export default function Cards2({ cards = [], className }) {
               className="w-auto h-auto object-cover object-center hover:scale-105 duration-700 transform ease-in-out hover:transform hover:duration-700 hover:ease-in-out "
             />
             <Link href={card.route}>
-              <h3 className="text-gray-800 font-thin text-xl  md:text-2xl lg:text-3xl font-passion tracking-wider ">
+              <h3 className="text-gray-800 font-medium text-xl  md:text-2xl lg:text-3xl font-lato tracking-wider hover-line">
                 {card.title}
               </h3>
             </Link>
-            <p className="text-gray-800 font-thin text-base font-alexbrush md:text-lg   lg:text-lg  tracking-wide    ">
+            <p className="text-gray-800 font-normal hover:underline text-base font-serif md:text-lg   lg:text-lg  tracking-wide    ">
               {card.text}
             </p>
-            <Link href={card.link}>
-              <h3 className="text-gray-800 font-thin text-base  md:text-lg lg:text-xl font-passion tracking-wider flex  gap-x-2 ">
-                {card.link_text}
+            <Link href={card.link} className="">
+              <h3 className="  text-gray-800 font-normal text-base  md:text-lg lg:text-xl font-serif tracking-wider flex  gap-x-2  ">
+                {card.link_text} &rarr;
               </h3>
             </Link>
           </div>

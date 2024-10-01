@@ -26,7 +26,7 @@ export default function Foot() {
       />
       </Link>
       <div className="flex flex-col gap-y-5 justify-center items-center w-full h-[fixed]">
-        <h3 className="text-white text-xl md:text-3xl lg:text-4xl font-bold ">
+        <h3 className="text-white text-xl md:text-3xl lg:text-4xl font-medium font-lato ">
           Stores
         </h3>
         <div className="flex flex-col justify-center items-center w-full">
@@ -34,7 +34,7 @@ export default function Foot() {
             <a
               key={index}
               href={link.url}
-              className={`text-white hover:text-stone-600 px-3 py-2 text-base md:text-xl font-medium transition duration-300 ease-in-out `}
+              className={`text-white hover:text-stone-600 px-3 py-2 text-base md:text-lg font-normal font-serif transition duration-300 ease-in-out `}
             >
               {link.text}
             </a>

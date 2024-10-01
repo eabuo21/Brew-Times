@@ -48,9 +48,14 @@ export default function CartCards() {
 
   const cart_items = [];
   return (
-    <div className="w-full h-[fixed] flex flex-col  justify-center items-center bg-stone-500 py-8 ">
+    <div className="w-full h-[fixed] flex flex-col  justify-center items-center bg-stone-300 py-8 ">
       <SubHeros items={subs} />
-      <AddToCart cards={card_items} />
+      <AddToCart
+        cards={card_items}
+        onClick={() => {
+          alert("item added to cart");
+        }}
+      />
     </div>
   );
 }

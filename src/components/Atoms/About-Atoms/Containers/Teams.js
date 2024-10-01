@@ -76,7 +76,7 @@ export default function Teams() {
 
   return (
     <div className="w-full flex flex-col gap-y-5 justify-center items-center p-2 mb-[2rem] md:mb-[7rem]">
-      <h2 className="text-lg md:text-2xl lg:text-5xl text-gray-800 font-passion font-thin">
+      <h2 className="text-xl md:text-2xl lg:text-5xl text-gray-800 font-lato font-medium">
         Meet Our Team
       </h2>
       <section className="w-full p-2 grid grid-cols-1 md:grid-cols-3 items-center justify-center gap-x-5 gap-y-8 ">
@@ -94,13 +94,13 @@ export default function Teams() {
             />
 
             <div className="w-full flex flex-col justify-center items-center gap-y-5">
-              <h3 className="text-gray-800 font-thin font-passion text-lg md:text-xl lg:text-2xl">
+              <h3 className="text-gray-800 font-medium font-lato text-lg md:text-xl lg:text-2xl">
                 {team.name}
               </h3>
-              <h3 className="text-gray-800 font-thin font-alexbrush text-base md:text-lg lg:text-xl">
+              <h3 className="text-gray-800 font-normal font-serif text-base md:text-lg lg:text-xl">
                 {team.role}
               </h3>
-              <section className="w-full flex flex-row gap-x-3  justify-center items-center ">
+              <section className="w-full flex flex-row gap-x-[3rem]  justify-center items-center ">
                 {team.links.map((link, i) => (
                   <a
                     key={i}

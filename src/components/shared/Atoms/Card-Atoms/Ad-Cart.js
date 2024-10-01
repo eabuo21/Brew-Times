@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-export default function AddToCart({ cards = [], className }) {
+export default function AddToCart({ cards = [], className, onClick }) {
   return (
     <div
       className={`w-full h-[fixed] justify-center items-center p-2 flex flex-col   ${className}`}
@@ -19,18 +19,18 @@ export default function AddToCart({ cards = [], className }) {
               height={500}
               className="w-[100px] h-[100px]   group-hover:blur transform duration-700 ease-in-out    md:w-[150px] md:h-[150px] "
             />
-            <h3 className="text-gray-800 font-bold text-base  md:text-lg lg:text-2xl font-passion tracking-wider  text-center">
+            <h3 className="text-gray-800 font-medium text-base  md:text-lg lg:text-2xl font-lato tracking-wider  text-center">
               {card.name}
             </h3>
-            <p className="text-gray-800 font-thin text-base font-alexbrush md:text-lg   lg:text-lg  tracking-wide   text-center w-[250px]  md:w-full ">
+            <p className="text-gray-800 font-normal text-base font-serif md:text-lg   lg:text-lg  tracking-wide   text-center w-[250px]  md:w-full ">
               {card.prize}
             </p>
-            <div
+            <button onClick={onClick}
               className="absolute  transform duration-700 ease-in-out mx-auto top-[2.5rem] bottom-[5rem] left-[2rem] right-[2rem]   flex justify-center items-center  opacity-0 
-            group-hover:opacity-100 group-hover:duration-700 group-hover:ease-in-out w-[130px] h-[50px] p-3  bg-stone-700  hover:bg-black hover:text-white  text-white  "
+            group-hover:opacity-100 group-hover:duration-700 group-hover:ease-in-out w-[130px] h-[50px] p-3  bg-stone-700  hover:bg-black hover:text-white  font-serif  font-normal  text-white  "
             >
               {card.adtext}
-            </div>
+            </button>
           </div>
         ))}
       </section>

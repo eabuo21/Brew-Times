@@ -7,14 +7,32 @@ import { Thumbs, EffectFade, Autoplay } from "swiper/modules";
 import Link from "next/link";
 import Image from "next/image";
 import HeadingWithContent from "@/components/shared/Atoms/Heading-With-Content";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 export default function Hero() {
+
+  useEffect(()=>{
+    Aos.init({
+      duration: 2000,
+      easing: "ease-in-out-cubic",
+      anchorPlacement: "top-center",
+      once: true,
+      mirror: true,
+      disableMutationObserver: true,
+      startEvent: "DOMContentLoaded",
+      resetAnimation: true,
+      offset: 100,
+      delay: 0,
+      anchorPlacement: "top-center",
+    });
+  },[]);
   const contents = [
     {
       heading: "Welcome To Brew Time ",
       description: "Check out our daily special offers on coffee and pastries.",
-      route: "/",
-      route_name: "Read More",
+      route: "/contact-us",
+      route_name: "Get Started",
     },
   ];
   //initializing animate on scroll
@@ -29,7 +47,7 @@ export default function Hero() {
 
   return (
     <>
-      <div className="relative w-full  h-[800px] overflow-hidden   flex flex-col  justify-start items-start      mb-9 ">
+      <div className="relative w-full  h-[800px] overflow-hidden   flex flex-col  justify-start items-start    ">
         <Swiper
           style={{
             "--swiper-navigation-color": "#fff",
@@ -84,8 +102,8 @@ export default function Hero() {
           ))}
         </Swiper> */}
 
-        <div className=" absolute left-0 right-0 top-0  h-[655px]  p-2  bg-black  opacity-65  z-30  grid grid-cols-1 gap-y-[100px] w-full md:h-[fixed]   justify-center items-center  mb-9   lg:grid-cols-2  lg:px-[4rem]  ">
-          <section className="first-container   h-[fixed] flex flex-col  justify-start items-start px-4 gap-y-[30px]  w-full  relative top-[3rem]   lg:top-0 ">
+        <div className=" absolute left-0 right-0 top-0  h-[650px]  p-2  bg-black  bg-opacity-50  z-30  grid grid-cols-1 gap-y-[100px] w-full md:h-[fixed]   justify-center items-center  mb-9   lg:grid-cols-2  lg:px-[4rem]  ">
+          <section  data-aos="zoom-in-up" data-aos-delay="100" className="first-container   h-[fixed] flex flex-col  justify-start items-start px-4 gap-y-[30px]  w-full  relative top-[3rem]   lg:top-0 ">
             <HeadingWithContent items={contents} className={``} />
           </section>
         </div>

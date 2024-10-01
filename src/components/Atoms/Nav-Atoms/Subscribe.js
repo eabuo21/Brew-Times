@@ -33,7 +33,7 @@ export default function Subscribe() {
 
   return (
     <div className="w-full h-[fixed] flex flex-col gap-y-5 justify-center items-center p-2 ">
-      <h3 className="text-white text-xl md:text-3xl lg:text-4xl font-bold ">
+      <h3 className="text-white text-xl md:text-3xl lg:text-3xl font-medium font-lato ">
         News As Fresh As Our Coffee
       </h3>
       <form
@@ -43,7 +43,7 @@ export default function Subscribe() {
         <input
           type="email"
           placeholder="Enter your email"
-          className="w-[300px] p-4 text-white bg-transparent border-2 border-white   focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-[300px] p-4 text-white bg-transparent border border-white   focus:outline-none focus:ring-2 focus:ring-blue-500"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -54,14 +54,14 @@ export default function Subscribe() {
           }`}
           disabled={loading}
         >
-          <FontAwesomeIcon icon={faEnvelope} className="text-black text-4xl" />
+          <FontAwesomeIcon icon={faEnvelope} className="text-black text-2xl" />
         </button>
       </form>
 
       <div className="w-full flex gap-x-4 justify-center items-center mx-auto">
         {loading ? (
           <b>
-            <FadeLoader color="white" size={50} />
+            <FadeLoader color="white" size={30} />
           </b>
         ) : null}
       </div>

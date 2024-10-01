@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import "./global.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
@@ -10,11 +10,32 @@ import Nav1 from "@/components/Atoms/Nav-Atoms/Nav1";
 import Nav2 from "@/components/Atoms/Nav-Atoms/Nav2";
 import ContactFlow from "@/components/shared/Atoms/ContactFlow";
 import Footer2 from "@/components/Atoms/Nav-Atoms/Footer2";
-
+import Image from "next/image";
 
 config.autoAddCss = false;
 
 function MyApp({ Component, pageProps }) {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const simulateWebsiteLoading = () => {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve();
+        }, 6000);
+      });
+    };
+
+    simulateWebsiteLoading()
+      .then(() => {
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Loading error:", error);
+        setLoading(false);
+      });
+  }, []);
+
   return (
     <>
       <Head>
@@ -39,9 +60,9 @@ function MyApp({ Component, pageProps }) {
         />
         <meta
           property="og:image"
-          content="/assets/images/brewtime-coffee.png"
+          content="https://brewtime.ca/images/logo-prime.webp"
         />
-        <meta property="og:url" content="https://www.brewtime.com" />
+        <meta property="og:url" content="https://brew-time.vercel.app" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
@@ -53,19 +74,35 @@ function MyApp({ Component, pageProps }) {
         />
         <meta
           name="twitter:image"
-          content="/assets/images/brewtime-coffee.png"
+          content="https://brewtime.ca/images/logo-prime.webp"
         />
-        <link rel="canonical" href="https://www.brewtime.com" />
-        <link rel="icon" type="image/png" href="/assets/images/tees-logo.png" />
+        <link rel="canonical" href="https://brew-time.vercel.app" />
+        <link
+          rel="icon"
+          type="image/png"
+          href="https://brewtime.ca/images/logo-prime.webp"
+        />
       </Head>
-      <div>
-      <Nav2/>
-        <Component {...pageProps} />
-        <ContactFlow />
-        <Foot />
-        <Footer2 />
-        <ToastContainer />
-      </div>
+      {loading ? (
+        <div className="  fixed top-0 left-0 right-0 bottom-0 z-50 h-[100vh]  w-full flex flex-col justify-center items-center  p-2 mx-auto m-auto   ">
+          <Image
+            src="/assets/images/2024-10-01-Brew-Time.gif"
+            alt="Loading..."
+            width={64}
+            height={64}
+            className="w-auto  h-auto object-contain object-center"
+          />
+        </div>
+      ) : (
+        <div>
+          <Nav2 />
+          <Component {...pageProps} />
+          <ContactFlow />
+          <Foot />
+          <Footer2 />
+          <ToastContainer />
+        </div>
+      )}
     </>
   );
 }

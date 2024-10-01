@@ -71,10 +71,10 @@ export default function Menu2() {
   ];
 
   return (
-    <div className="w-full h-[fixed] flex flex-col gap-y-5 justify-center items-center  bg-stone-500 p-2 ">
+    <div className="w-full h-[fixed] flex flex-col gap-y-5 justify-center items-center  bg-stone-300 p-2 ">
       <SubHeros items={hero_items} />
 
-      <MenuCards title=" Menus" cards={menu_contents} />
+      <MenuCards title=" Menu" cards={menu_contents} />
     </div>
   );
 }

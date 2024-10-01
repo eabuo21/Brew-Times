@@ -129,7 +129,7 @@ body,
   left: 50%;
   width: 0;
   height: 3px;
-  background-color: white;
+  background-color: black;
   transition: all 0.5s ease;
   transform: translateX(-50%);
 }

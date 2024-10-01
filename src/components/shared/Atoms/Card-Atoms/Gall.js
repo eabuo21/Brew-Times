@@ -1,24 +1,43 @@
-import React from "react";
+import {useEffect} from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 export default function Gall({ cards = [], className }) {
+  useEffect(() => {
+   
+    Aos.init({
+      duration: 2000,
+      easing: "ease-in-out-cubic",
+      anchorPlacement: "top-center",
+      once: true,
+      mirror: true,
+      disableMutationObserver: true,
+      startEvent: "DOMContentLoaded",
+      resetAnimation: true,
+      offset: 100,
+      delay: 0,
+      anchorPlacement: "top-center",
+    });
+  }, []); 
+
   return (
     <div
       className={` ${className} w-full h-[fixed] md:h-[600px] p-2 pb-2  justify-center items0center flex flex-col `}
     >
-      <section className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4  w-full h-[fixed] justify-center  items-center  mx-auto    gap-x-[10px] mx-auto  gap-y-[30px] ">
+      <section className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4  w-full h-[fixed] justify-center  items-center      gap-x-[10px] mx-auto  gap-y-[30px] ">
         {cards.map((gal, index) => (
-          <div
+          <div data-aos="zoom-in-up"
             key={index}
-            className=" relative  group  transform duration-700 ease-in-out mx-auto  w-[300px] h-[fixed] overflow-hidden  justify-center items-center  flex flex-col gap-y-5 "
+            className=" relative  group  transform duration-700 ease-in-out mx-auto  w-full    md:w-[300px] md:h-[fixed] overflow-hidden  justify-center items-center  flex flex-col gap-y-5 "
           >
             <Image
               src={gal.image}
               width={500}
               height={500}
               alt={gal.title}
-              className="w-[300px] h-[300px] object-cover object-center "
+              className="    w-full    md:w-[300px] h-[300px] object-cover object-center "
             />
 
             <div
@@ -28,7 +47,7 @@ export default function Gall({ cards = [], className }) {
              "
             >
               <h3
-                className="text-white font-thin text-xl  md:text-2xl lg:text-3xl font-passion tracking-wider  
+                className="text-white font-medium text-xl  md:text-2xl lg:text-3xl font-lato tracking-wider  
               "
               >
                 {gal.title}
@@ -36,7 +55,7 @@ export default function Gall({ cards = [], className }) {
               <section className="flex flex-row gap-x-2  justify-center items-center  ">
                 <Link
                   href={`/gallery/${gal.id}`}
-                  className="text-white  text-xl   hover:text-tomato"
+                  className="text-white  font-serif font-normal  text-xl   hover:text-tomato"
                 >
                   {gal.id_name1}
                 </Link>{" "}

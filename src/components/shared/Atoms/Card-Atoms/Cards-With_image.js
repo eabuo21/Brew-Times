@@ -19,10 +19,10 @@ export default function CardsWithImage({ cards = [], className }) {
               height={500}
               className="w-[70px] h-[70px] "
             />
-            <h3 className="text-gray-800 font-thin text-xl  md:text-2xl lg:text-3xl font-passion tracking-wider ">
+            <h3 className="text-gray-800 font-medium text-xl  md:text-2xl lg:text-3xl font-lato tracking-wider ">
               {card.title}
             </h3>
-            <p className="text-gray-800 font-thin text-base font-alexbrush md:text-lg   lg:text-lg  tracking-wide   text-center w-[250px]  md:w-full ">
+            <p className="text-gray-800 font-normal text-base font-serif md:text-lg   lg:text-lg  tracking-wide   text-center w-[250px]  md:w-full ">
               {card.text}
             </p>
           </div>

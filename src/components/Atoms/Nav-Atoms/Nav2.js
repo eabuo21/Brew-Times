@@ -61,8 +61,8 @@ const Nav2 = () => {
       as="nav"
       className={`fixed top-0 left-0 right-0 z-50 h-[100px]  justify-center items-start flex   md:h-[100px] w-full transition-transform duration-300 ease-in-out ${
         scrolling
-          ? "  shadow-md text-black  bg-white transition-transform duration-700 transform -translate-y-2 ease-in-out"
-          : "  bg-white    text-black   md:bg-transparent  md:text-white transform duration-700 ease-in-out translate-y-0 "
+          ? "  shadow-md  text-gray-800 font-lato font-medium   bg-white transition-transform duration-700 transform -translate-y-2 ease-in-out"
+          : "  bg-white    text-gray-800 font-lato font-medium    md:bg-transparent  md:text-white transform duration-700 ease-in-out translate-y-0 "
       }`}
     >
       {({ open }) => (
@@ -96,7 +96,7 @@ const Nav2 = () => {
                 <Link
                   key={link.name}
                   href={link.to}
-                  className=" font-passion  flex flex-row justify-center items-start  hover-line hover:text-stone-500 font-thin text-lg md:text-xl lg:text-2xl"
+                  className=" font-lato font-medium   flex flex-row justify-center items-start  hover-line hover:text-stone-300  text-lg md:text-xl lg:text-2xl"
                 >
                   {link.name}
                 </Link>
@@ -104,9 +104,9 @@ const Nav2 = () => {
             </div>
 
             {/* Hamburger Menu (visible on small screens) */}
-            <div className="md:hidden ml-auto mr-5 text-2xl">
+            <div className="md:hidden ml-auto mr-5 text-3xl">
               <Disclosure.Button
-                className={` text-black   ${scrolling ? "text-black" : ""}`}
+                className={` text-gray-800   ${scrolling ? "text-gray-800" : ""}`}
                 onClick={() => setMenuOpen(!menuOpen)}
               >
                 <span className="sr-only">Open Menu</span>
@@ -120,11 +120,11 @@ const Nav2 = () => {
             show={menuOpen}
             as={React.Fragment}
             enter="transform duration-700 ease-in-out"
-            enterFrom="-translate-y-[5%]"
+            enterFrom="-translate-y-[2%]"
             enterTo="translate-y-0"
             leave="transform duration-700 ease-in-out"
             leaveFrom="translate-y-[5%]"
-            leaveTo="-translate-y-[5%]"
+            leaveTo="-translate-y-[2%]"
           >
             <div className="w-[100%] h-[1000px] fixed  bg-black bg-opacity-0  mt-[3rem]"
             onClick={handleClickOutside}>
@@ -134,14 +134,14 @@ const Nav2 = () => {
                     <Link
                       key={link.name}
                       href={link.to}
-                      className="text-black  font-passion font-thin  flex  w-[300px] px-2 border-b border-b-stone-500 text-xl"
+                      className="text-black  font-passion font-thin  flex  w-[300px] px-2  text-xl"
                       onClick={() => setMenuOpen(false)}
                     >
                       {link.name}
-                      <FontAwesomeIcon
+                      {/* <FontAwesomeIcon
                         icon={faChevronRight}
                         className="text-gray-800 ml-auto  mr-3 text-base "
-                      />
+                      /> */}
                     </Link>
                   ))}
                 </div>
