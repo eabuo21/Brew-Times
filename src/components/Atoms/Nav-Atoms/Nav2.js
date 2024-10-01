@@ -50,6 +50,12 @@ const Nav2 = () => {
     return () => (document.body.style.overflow = "auto");
   }, [menuOpen]);
 
+  const handleClickOutside = (e) => {
+    if (e.currentTarget === e.target) {
+      setMenuOpen(false);
+    }
+  };
+
   return (
     <Disclosure
       as="nav"
@@ -120,24 +126,27 @@ const Nav2 = () => {
             leaveFrom="translate-y-[5%]"
             leaveTo="-translate-y-[5%]"
           >
-            <Disclosure.Panel className="md:hidden bg-white  h-[300px] p-2   z-50 w-[100%] mt-[1rem] flex flex-col justify-start items-start gap-8 text-2xl">
-              <div className="flex flex-col justify-center items-start space-y-8 mt-9 p-4 ">
-                {navigationLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    href={link.to}
-                    className="text-black  font-passion font-thin  flex  w-[300px] px-2 border-b border-b-stone-500 text-xl"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    {link.name}
-                    <FontAwesomeIcon
-                      icon={faChevronRight}
-                      className="text-gray-800 ml-auto  mr-3 text-base "
-                    />
-                  </Link>
-                ))}
-              </div>
-            </Disclosure.Panel>
+            <div className="w-[100%] h-[1000px] fixed  bg-black bg-opacity-0  mt-[3rem]"
+            onClick={handleClickOutside}>
+              <Disclosure.Panel className="md:hidden bg-white  h-[300px] p-2  fixed z-50 w-[100%] mt-[3rem] flex flex-col justify-start items-start gap-8 text-2xl">
+                <div className="flex flex-col justify-center items-start space-y-8 mt-9 p-4 ">
+                  {navigationLinks.map((link) => (
+                    <Link
+                      key={link.name}
+                      href={link.to}
+                      className="text-black  font-passion font-thin  flex  w-[300px] px-2 border-b border-b-stone-500 text-xl"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {link.name}
+                      <FontAwesomeIcon
+                        icon={faChevronRight}
+                        className="text-gray-800 ml-auto  mr-3 text-base "
+                      />
+                    </Link>
+                  ))}
+                </div>
+              </Disclosure.Panel>
+            </div>
           </Transition>
         </>
       )}

@@ -6,6 +6,7 @@ import Paralax from "../../Home-Atoms/Containers/Paralax";
 import Mission from "../Containers/Mission";
 import Teams from "../Containers/Teams";
 
+
 export default function Container() {
   return (
     <div className="w-full flex flex-col gap-y-[100px]">
