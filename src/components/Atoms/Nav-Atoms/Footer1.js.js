@@ -30,7 +30,7 @@ export default function Foot() {
             <a
               key={index}
               href={link.url}
-              className={`text-white hover:text-stone-500 px-3 py-2 text-base md:text-xl font-medium transition duration-300 ease-in-out `}
+              className={`text-white hover:text-stone-600 px-3 py-2 text-base md:text-xl font-medium transition duration-300 ease-in-out `}
             >
               {link.text}
             </a>
