@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --foreground-rgb: 255, 255, 255; /* White text */
+  --background-start-rgb: 0, 0, 0; /* Black background */
+  --background-end-rgb: 0, 0, 0; /* Black background */
+}
+
+body,
+:root {
+  background: rgb(255, 255, 255);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .animated {
+    animation: bounce 7s linear infinite;
+  }
+
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+}
+
+/* swiper.css */
+.swiper {
+  width: 100%;
+  height: 300px; /* Reduced height */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 5, 0.5),
+    rgba(0, 0, 5, 0.5)
+  );
+}
+
+.mySwiper2 {
+  height: 650px; /* Reduced height */
+  width: 100%;
+}
+
+.mySwiper {
+  height: 40%; /* Reduced height */
+  box-sizing: border-box;
+  padding: 5px 0; /* Adjusted padding */
+}
+
+.mySwiper .swiper-slide {
+  width: 20%; /* Adjusted width for thumbnails */
+  height: 40%; /* Reduced height */
+  opacity: 0.4;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 650px; /* Reduced height */
+  object-fit: cover;
+}
+
+.clip-bottom-edge {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%);
+}
+
+
+
+/* adding paralax scrolls  */
+
+.parallax {
+  /* The image used */
+  background-image: linear-gradient(rgba(0, 0, 3, 0.6), rgba(0, 0, 3, 0.6)),
+    url("https://cdn.vox-cdn.com/thumbor/X6SXIp7SNGuXE6IRcCZuVu8m3J0=/0x0:3072x4080/1200x900/filters:focal(1143x2660:1633x3150):no_upscale()/cdn.vox-cdn.com/uploads/chorus_image/image/71633539/PXL_20220830_183956022.PORTRAIT.0.jpg");
+
+  /* Set a specific height */
+  height: 700px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax2 {
+  /* The image used */
+  background-image: linear-gradient(rgba(0, 0, 3, 0.8), rgba(0, 0, 3, 0.8)),
+    url("https://images.adsttc.com/media/images/5de8/74f9/3312/fdbc/3500/005b/large_jpg/Culturist_5.jpg?1575515353");
+
+  /* Set a specific height */
+  height: 700px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
