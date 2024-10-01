@@ -1,5 +1,7 @@
 import React from "react";
 import SubHeros from "@/components/shared/Atoms/SubHeros";
+import Link from "next/link";
+import Subscribe from "./Subscribe";
 
 export default function Foot() {
   const links = [
@@ -9,18 +11,20 @@ export default function Foot() {
   const items = [
     {
       image:
-        "https://corretto.qodeinteractive.com/wp-content/uploads/2018/04/logo-footer-sidearea.png",
+        "https://brewtime.ca/images/logo-prime.webp",
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,nostrud exercitation ullamco laboris.",
     },
   ];
 
   return (
     <div className="w-full h-[fixed] justify-center items-center   flex flex-col gap-y-5    parallax2">
+    <Link href="/">
       <SubHeros
         items={items}
         text_className={`text-white lg:text-2xl `}
         image_className={`  h-[80px] object-fill max-w-[200px]    md:h-[100px]`}
       />
+      </Link>
       <div className="flex flex-col gap-y-5 justify-center items-center w-full h-[fixed]">
         <h3 className="text-white text-xl md:text-3xl lg:text-4xl font-bold ">
           Stores
@@ -37,6 +41,7 @@ export default function Foot() {
           ))}
         </div>
       </div>
+      <Subscribe/>
     </div>
   );
 }

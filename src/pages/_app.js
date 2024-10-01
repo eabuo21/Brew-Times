@@ -9,6 +9,8 @@ import Foot from "@/components/Atoms/Nav-Atoms/Footer1.js";
 import Nav1 from "@/components/Atoms/Nav-Atoms/Nav1";
 import Nav2 from "@/components/Atoms/Nav-Atoms/Nav2";
 import ContactFlow from "@/components/shared/Atoms/ContactFlow";
+import Footer2 from "@/components/Atoms/Nav-Atoms/Footer2";
+
 
 config.autoAddCss = false;
 
@@ -57,9 +59,11 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" type="image/png" href="/assets/images/tees-logo.png" />
       </Head>
       <div>
+      <Nav2/>
         <Component {...pageProps} />
         <ContactFlow />
         <Foot />
+        <Footer2 />
         <ToastContainer />
       </div>
     </>

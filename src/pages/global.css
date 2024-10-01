@@ -85,8 +85,6 @@ body,
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%);
 }
 
-
-
 /* adding paralax scrolls  */
 
 .parallax {
@@ -119,3 +117,25 @@ body,
   background-size: cover;
 }
 
+/* sliding line */
+.hover-line {
+  position: relative;
+}
+
+.hover-line::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background-color: white;
+  transition: all 0.5s ease;
+  transform: translateX(-50%);
+}
+
+.hover-line:hover::before {
+  width: 100%;
+  left: 0;
+  transform: translateX(0);
+}

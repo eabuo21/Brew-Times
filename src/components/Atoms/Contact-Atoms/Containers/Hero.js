@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <div className='w-full '>
 
-<HeroDiv background_image="https://www.theo2.co.uk/assets/img/AzeraCafeEdit_03-96e2368b2f.JPG" text="About Us"/>
+<HeroDiv background_image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4KjmvbXmM-3ONenolo-LsRgH8nfbK4DAIqA&s" text="Contact Us"/>
     </div>
   )
 }
