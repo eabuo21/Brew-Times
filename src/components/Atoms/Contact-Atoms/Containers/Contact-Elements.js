@@ -12,43 +12,40 @@ export default function ContactElements() {
   const socials = [
     {
       icon: faFacebook,
-      url: "https://www.facebook.com/",
+      url: "https://www.facebook.com/brewtimecoffee",
     },
-
     {
       icon: faXTwitter,
-      url: "https://www.twitter.com/",
+      url: "https://www.twitter.com/brewtimecoffee",
     },
     {
       icon: faLinkedin,
-      url: "https://www.linkedin.com/",
+      url: "https://www.linkedin.com/company/brewtimecoffee",
     },
     {
       icon: faInstagram,
-      url: "https://www.instagram.com/",
+      url: "https://www.instagram.com/brewtimecoffee",
     },
   ];
 
   return (
-    <div className="w-full h-[fixed] flex flex-col  gap-y-5 p-2 justify-center items-start   px-6    md:ml-[3rem] mb-auto">
-      <h1 className="text-gray-800 font-medium text-4xl  md:text-5xl lg:text-7xl font-lato tracking-wider ">
+    <div className="w-full h-[fixed] flex flex-col gap-y-5 p-2 justify-center items-start px-6 md:ml-[3rem] mb-auto">
+      <h1 className="text-gray-800 font-medium text-4xl md:text-5xl lg:text-7xl font-lato tracking-wider">
         Get in Touch
       </h1>
       <p
-        className={`  text-gray-800 font-normal text-base font-serif md:text-lg   lg:text-lg  tracking-wide  w-[90%] md:w-[70%] text-justify `}
+        className={`text-gray-800 font-normal text-base font-serif md:text-lg lg:text-lg tracking-wide w-[90%] md:w-[70%] text-justify`}
       >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.
+        We're here to answer your questions and help you enjoy your perfect cup of coffee. Reach out to us through any of the contacts below, and we’ll get back to you as soon as possible!
       </p>
-      <ul className=" text-gray-800 font-normal text-base font-serif md:text-lg   list-disc flex flex-col gap-y-5  lg:text-lg  tracking-wide  w-[90%] md:w-[70%] text-justify">
-        <li> Duis aute irure dolor</li>
-        <li> In reprehenderit in</li>
-        <li> Voluptate velit esse</li>
-        <li> Illum dolore eu fugiat nulla pariatur.</li>
+      <ul className="text-gray-800 font-normal text-base font-serif md:text-lg list-disc flex flex-col gap-y-5 lg:text-lg tracking-wide w-[90%] md:w-[70%] text-justify">
+        <li>Phone: +1 (555) 123-4567</li>
+        <li>Email: contact@brewtimecoffee.com</li>
+        <li>Customer Support: support@brewtimecoffee.com</li>
+        <li>Business Inquiries: business@brewtimecoffee.com</li>
       </ul>
 
-      <div className="socials-icon-container flex flex-row gap-x-8 justify-center items-center  p-2">
+      <div className="socials-icon-container flex flex-row gap-x-8 justify-center items-center p-2">
         {socials.map((social) => (
           <Link
             key={social.url} // Changed to social.url for unique key
@@ -58,7 +55,7 @@ export default function ContactElements() {
           >
             <FontAwesomeIcon
               icon={social.icon}
-              className="text-gray-700 text-xl  bg-gray-300 p-2 rounded-full"
+              className="text-gray-700 text-xl bg-gray-300 p-2 rounded-full"
             />
           </Link>
         ))}

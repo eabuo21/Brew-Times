@@ -16,7 +16,7 @@ export default function Footer2() {
     },
     {
       label: "Menus",
-      url: "/menus",
+      url: "/menu",
     },
     {
       label: "Contact ",
