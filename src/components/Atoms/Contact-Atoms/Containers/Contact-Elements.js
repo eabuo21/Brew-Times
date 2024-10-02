@@ -36,7 +36,7 @@ export default function ContactElements() {
       <p
         className={`text-gray-800 font-normal text-base font-serif md:text-lg lg:text-lg tracking-wide w-[90%] md:w-[70%] text-justify`}
       >
-        We're here to answer your questions and help you enjoy your perfect cup of coffee. Reach out to us through any of the contacts below, and we’ll get back to you as soon as possible!
+        We&apos;re here to answer your questions and help you enjoy your perfect cup of coffee. Reach out to us through any of the contacts below, and we&apos;ll get back to you as soon as possible!
       </p>
       <ul className="text-gray-800 font-normal text-base font-serif md:text-lg list-disc flex flex-col gap-y-5 lg:text-lg tracking-wide w-[90%] md:w-[70%] text-justify">
         <li>Phone: +1 (555) 123-4567</li>
